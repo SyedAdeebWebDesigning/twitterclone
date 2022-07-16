@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@media (min-width: 336px) {
+    .xsm\:flex-row {
+        flex-direction: row;
+    }
+}
