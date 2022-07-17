@@ -5,7 +5,7 @@ import {
 	PhotographIcon,
 	SearchCircleIcon,
 } from "@heroicons/react/outline";
-// import toast from "react-hot-toast";
+import toast from "react-hot-toast";
 import { Dispatch, SetStateAction, useRef, useState } from "react";
 import { useSession } from "next-auth/react";
 import { Tweet, TweetBody } from "../typings";
@@ -49,9 +49,9 @@ function TweetBox({ setTweets }: Props) {
 		const json = await result.json();
 		const newTweets = await fetchTweets();
 		setTweets(newTweets);
-		// toast("Tweet Posted", {
-		// 	icon: "🚀",
-		// });
+		toast("Tweet Posted", {
+			icon: "🚀",
+		});
 		return json;
 	};
 

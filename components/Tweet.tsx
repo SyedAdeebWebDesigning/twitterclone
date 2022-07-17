@@ -9,7 +9,7 @@ import {
 } from "@heroicons/react/outline";
 import { fetchComments } from "../utils/fetchComments";
 import { useSession } from "next-auth/react";
-// import toast from "react-hot-toast";
+import toast from "react-hot-toast";
 
 interface Props {
 	tweet: Tweet;
@@ -31,7 +31,7 @@ function Tweet({ tweet }: Props) {
 
 	const handelSubmit = async(e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
-		// const commentToast = toast.loading("Posting Comment...");
+		const commentToast = toast.loading("Posting Comment...");
 
 		// Comment logic
 		const comment: CommentBody = {
@@ -47,9 +47,10 @@ function Tweet({ tweet }: Props) {
 		});
 
 		console.log("WOOHOO we made it", result);
-		// toast.success("Comment Posted!", {
-		// 	id: commentToast,
-		// });
+		toast.success("Comment Posted!", {
+			id: commentToast,
+		});
+		
 
 		setInput("");
 		setCommentBoxVisible(false);
